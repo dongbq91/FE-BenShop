@@ -114,7 +114,9 @@
 	font-weight: 500;
     transition: all 200ms linear;
 }
-
+.nav-item:hover .nav-link{
+	color: #8167a9 !important;
+}
 .nav-item.active .nav-link{
 	color: #777 !important;
 }
@@ -123,8 +125,24 @@
 	padding: 5px 0 !important;
 	display: inline-block;
 }
-
-
+.nav-item:after{
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	content: '';
+	background-color: #8167a9;
+	opacity: 0;
+    transition: all 200ms linear;
+}
+.nav-item:hover:after{
+	bottom: 0;
+	opacity: 1;
+}
+.nav-item.active:hover:after{
+	opacity: 0;
+}
 .nav-item{
 	position: relative;
     transition: all 200ms linear;
@@ -184,7 +202,7 @@ h1 span{
 	transform: translate(0);
 }
 
-h1 span:nth-child(1){
+/* h1 span:nth-child(1){
     transition-delay: 1000ms;
 }
 h1 span:nth-child(2){
@@ -229,7 +247,7 @@ h1 span:nth-child(14){
 }
 h1 span:nth-child(15){
     transition-delay: 1450ms;
-}
+} */
 #switch,
 #circle {
 	cursor: pointer;
@@ -286,7 +304,6 @@ h1 span:nth-child(15){
 	max-height: 999px;
     transform: translate3d(0, 0px, 0);
 }
-
 .dropdown-menu {
 	padding: 10px!important;
 	margin: 0;
@@ -309,7 +326,11 @@ h1 span:nth-child(15){
 	border-radius: 2px;
     transition: all 200ms linear;
 }
-
+.dropdown-item:hover, 
+.dropdown-item:focus {
+	color: #fff;
+	background-color: rgba(129,103,169,.6);
+}
 
 
 
@@ -335,6 +356,7 @@ h1 span:nth-child(15){
 		content: "";
 		border: none;
 		background-color: #000;
+		vertical-align: 0;
 	}
 	.dropdown-toggle::after {
 		position: absolute;
@@ -346,6 +368,7 @@ h1 span:nth-child(15){
 		content: "";
 		border: none;
 		background-color: #000;
+		vertical-align: 0;
 		transition: all 200ms linear;
 	}
 	.dropdown-toggle[aria-expanded="true"]::after{
@@ -362,5 +385,14 @@ h1 span:nth-child(15){
 		margin-top: 10px !important;
 		margin-bottom: 20px !important;
 	}
-
+	body.dark .nav-item::before {
+		background-color: #fff;
+	}
+	body.dark .dropdown-toggle::after {
+		background-color: #fff;
+	}
+	body.dark .dropdown-menu {
+		background-color: transparent;
+		box-shadow: none;
+	}
 }
