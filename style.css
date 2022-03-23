@@ -137,10 +137,12 @@
     transition: all 200ms linear;
 }
 .nav-item:hover:after{
+	display: block;
 	bottom: 0;
 	opacity: 1;
 }
 .nav-item.active:hover:after{
+	display: block;
 	opacity: 0;
 }
 .nav-item{
@@ -194,11 +196,7 @@ p{
     transition: all 300ms linear;
     transition-delay: 1700ms;
 }
-body.hero-anime p{
-	opacity: 0;
-	transform: translateY(40px);
-    transition-delay: 1700ms;
-}
+
 h1 span{
 	display: inline-block;
     transition: all 300ms linear;
@@ -308,6 +306,9 @@ h1 span:nth-child(15){
 	max-height: 999px;
     transform: translate3d(0, 0px, 0);
 }
+.nav-item:hover{
+	display: block;
+}
 .dropdown-menu {
 	padding: 10px!important;
 	margin: 0;
@@ -360,7 +361,6 @@ h1 span:nth-child(15){
 		content: "";
 		border: none;
 		background-color: #000;
-		vertical-align: 0;
 	}
 	.dropdown-toggle::after {
 		position: absolute;
@@ -372,7 +372,6 @@ h1 span:nth-child(15){
 		content: "";
 		border: none;
 		background-color: #000;
-		vertical-align: 0;
 		transition: all 200ms linear;
 	}
 	.dropdown-toggle[aria-expanded="true"]::after{
@@ -389,14 +388,5 @@ h1 span:nth-child(15){
 		margin-top: 10px !important;
 		margin-bottom: 20px !important;
 	}
-	body.dark .nav-item::before {
-		background-color: #fff;
-	}
-	body.dark .dropdown-toggle::after {
-		background-color: #fff;
-	}
-	body.dark .dropdown-menu {
-		background-color: transparent;
-		box-shadow: none;
-	}
+
 }
